@@ -1,0 +1,63 @@
+table user {
+  id interger [primary key]
+  username varchar
+  name varchar
+  surname varchar
+  email varchar
+}
+
+table teacher {
+  id integer [primary key]
+  username varchar
+  name varchar
+  surname varchar
+  email varchar
+}
+
+table session {
+  id integer [primary key]
+  title varchar
+  category integer
+  teacherId integer
+  desc marcher
+  duration varchar
+  cost float
+  location carchar
+  img varchar
+  impactScore float
+}
+
+table category {
+  id integer [primary key]
+  categoryName varchar
+}
+
+table learning {
+  id integer [primary key]
+  userId integer
+  sessionId integer
+}
+
+table review {
+  id integer [primary key]
+  userId integer
+  sessionId integer
+  review varchar
+}
+
+Ref: session.category > category.id
+
+Ref: session.teacherId > teacher.id
+
+Ref: learning.userId > user.id
+Ref: learning.sessionId > session.id
+
+Ref: review.userId > user.id
+Ref: review.sessionId > session.id
+
+
+
+
+
+
+
